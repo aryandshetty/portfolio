@@ -24,8 +24,7 @@ jobs:
     - name: Install Dependencies
       run: npm install
 
-    # If you ever add a testing framework (like Jest) later, you uncomment this:
-      name: Run Tests
+    - name: Run Safety Tests
       run: npm test
 
     - name: Trigger Render Deployment
