@@ -1,3 +1,5 @@
+require("node:dns/promises").setServers(["1.1.1.1", "8.8.8.8"]);
+
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
@@ -11,7 +13,7 @@ app.use(express.json());
 app.use(cors()); // Allow frontend requests
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.error('MongoDB connection error:', err));
 
